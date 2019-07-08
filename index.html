@@ -15,20 +15,22 @@
     
     <body>
         <div class="container">
-            <div class="col-xs-12" id="gameContainer">
-                <div class="col-xs-6 option one" id="1"></div>
-                <div class="col-xs-6 option two" id="2"></div>
-                <div class="col-xs-6 option three" id="3"></div>
-                <div class="col-xs-6 option four" id="4"></div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="col-sm-8 offset-2" id="infoBox">
-                <h1 id="title">The Simon Game</h1>
-                <p>Memorise the patterns used on the game board above and repeat. Test your skills and enjoy!<br>Click anywhere on circle to start your game</p>
-                
-                <h2 id="level">Level : 0</h2>
+            <div class="row">
+                <div class="col-xs-6" id="gameContainer">
+                    <div class="col-xs-3 option one" id="1"></div>
+                    <div class="col-xs-3 option two" id="2"></div>
+                    <div class="col-xs-3 option three" id="3"></div>
+                    <div class="col-xs-3 option four" id="4"></div>
+                </div>
         
+                <div class="col-xs-6" id="infoBox">
+                    <h1 id="title">The Simon Game</h1>
+                    <p>Memorise the patterns used on the game board above and repeat by clicking the same colours. Test your memory skills and enjoy!<br>Click "Start" to begin your game</p>
+                    <button class="startButton">Start</button>
+                    <button class="resetButton">Reset</button>
+                    <h2 id="level">Level : 0</h2>
+        
+                </div>
             </div>
         </div>
     
