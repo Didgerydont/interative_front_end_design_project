@@ -1,9 +1,63 @@
-#gameContainer {
-    width: 550px;
-    height: 550px;
-    border-radius: 30%;
-    border: 14px solid #333;
-    margin: 100px auto;
-    position: relative;
-    box-shadow: 0px 0px 150px #333;
+ h1 {
+     color: white;
+     font-size: 40px;
+     font-weight: bold;
+     text-align: center;
+     padding-top: 10px;
+     margin-bottom: 30px;
+     font-family: 'Barriecito', cursive;
+ }
+
+ p {
+     color: white;
+     font-size: 16px;
+     margin-top: 0px;
+     margin-bottom: 0px;
+     text-align: center;
+     position: relative;
+     top: -10px;
+     font-family: 'Barriecito', cursive;
+ }
+
+ h2 {
+     margin-top: 5px;
+     color: white;
+     text-align: center;
+     font-size: 40px;
+     font-family: 'Barriecito', cursive;
+ }
+
+ #gameContainer {
+     height: 300px;
+     width: 300px;
+     border-radius: 30%;
+     border: 7px solid #333;
+     margin: 50px auto;
+     position: relative;
+     box-shadow: 0px 0px 150px #333;
+ }
+
+ #infoBox {
+     padding: 20px 40px 20px 40px;
+     background-color: #555;
+     cursor: pointer;
+     border-radius: 16px;
+ }
+
+ .option {
+     width: 150px;
+     height: 150px;
+     float: left;
+ }
+ .one {
+    
+  }
+  .two {
+    
+  }
+  .three {
+  
+  }
+  .four {
+    
   }
