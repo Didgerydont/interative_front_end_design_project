@@ -6,17 +6,14 @@ $(document).ready(function() {
         $('#3').fadeOut(300).removeClass('three').addClass('colourBlind3').fadeIn(300);
         $('#4').fadeOut(300).removeClass("four").addClass('colourBlind4').fadeIn(300);
     });
-    
+
     $("#accessibilityOff").on('click', function() {
         $('#1').fadeOut(300).removeClass('colourBlind1').addClass('one').fadeIn(300);
         $('#2').fadeOut(300).removeClass('colourBlind2').addClass('two').fadeIn(300);
         $('#3').fadeOut(300).removeClass('colourBlind3').addClass('three').fadeIn(300);
-        $('#4').fadeOut(300).removeClass('colourblind').addClass('four').fadeIn(300);
+        $('#4').fadeOut(300).removeClass('colourblind4').addClass('four').fadeIn(300);
     });
-    
-    
-    
-    
+
     var newPattern = [];
     var spentPattern = [];
     var level = 0;
@@ -30,11 +27,11 @@ $(document).ready(function() {
         return Math.round(Math.random() * (max - min)) + min;
     }
 
-    //pValue is a random number being between one and four
+    //pValue is a random number between one and four
     function addPattern() {
         var pValue = randomNumber(1, 4);
 
-        // adds a new Pattern to array
+        // push a new number to newPattern array
         newPattern.push(pValue);
     }
 
@@ -52,8 +49,8 @@ $(document).ready(function() {
         var item = newPattern.pop();
         gameChecker = true;
 
-        // pops and removes first item of array 
-        $('#' + item).animate({
+        // pops and removes first item of array and animates the square eg. #2, #3 etc. 
+        $('#' + item).animate({ // 
             opacity: 0.2
         }, 200).animate({
             opacity: 1
@@ -71,14 +68,14 @@ $(document).ready(function() {
 
     function createClicks() {
         $('.option').click(function() {
-            // check if clicked element is the right square
+            // item = Index 0 of spentPattern
             var item = spentPattern.shift();
-            // 
+            // optionId = clicked square
             var optionId = $(this).attr('id');
 
-            $(this).animate({ opacity: .2 }, 200).animate({ opacity: 1 }, 100)
+            $(this).animate({ opacity: .2 }, 200).animate({ opacity: 1 }, 100) // animate the clicked the box
 
-            // if yes remove from spentPattern and add to newPattern
+            // if the click matches the item remove it from spentPattern and add it to newPattern
             if (item == optionId) {
                 //adds item back to newPattern array
                 newPattern.push(item);
@@ -86,7 +83,16 @@ $(document).ready(function() {
                 if (spentPattern.length <= 0) {
                     level++;
                     $('#level').html('Level: ' + level);
-
+                    if (level == 3) {
+                        $('h1').html('Congratulations, you have completed the game').css({
+                            fontSize: 48,
+                            marginBottom: 15,
+                            marginTop: 15
+                        });
+                        pattern = [];
+                        spentPattern = [];
+                        removeClicks();
+                    }
                     removeClicks();
                     //user is finished clicking through the newPattern successfully
                     // add new square to newPattern

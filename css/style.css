@@ -30,6 +30,11 @@ h2 {
  font-family: 'Barriecito', cursive;
 }
 
+button {
+ background-color: #999;
+ font-family: 'Barriecito', cursive;
+}
+
 .container {
  text-align: center;
 }
