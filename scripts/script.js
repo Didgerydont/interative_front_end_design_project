@@ -18,6 +18,7 @@ $(document).ready(function() {
     var spentPattern = [];
     var level = 0;
     var gameChecker = false;
+    var noise = false;
 
 
 
@@ -45,21 +46,38 @@ $(document).ready(function() {
     }
 
     function flashSquare() {
-
         var item = newPattern.pop();
+        var itemSound = $('#clip' + item);
+        console.log(itemSound);
         gameChecker = true;
+        noise = true;
+
+        if (itemSound == '#clip1') {
+            one();
+        }
+        if (itemSound == '#clip2') {
+            two();
+        }
+        if (itemSound == '#clip3') {
+            three();
+        }
+        if (itemSound == '#clip4') {
+            four();
+        }
+
+
 
         // pops and removes first item of array and animates the square eg. #2, #3 etc. 
-        $('#' + item).animate({ // 
+        $('#' + item).animate({
             opacity: 0.2
         }, 200).animate({
             opacity: 1
         }, 100);
         //animation takes 300 ms in total. The difference in opacity for different time lengths will create the "flash" effect
 
+
         spentPattern.push(item);
         // take the item  removed from newPattern and add it to spentPattern 
-
         if (newPattern.length <= 0) {
             // add the click event once cpu is finished showing the newPattern
             createClicks();
@@ -83,22 +101,22 @@ $(document).ready(function() {
                 if (spentPattern.length <= 0) {
                     level++;
                     $('#level').html('Level: ' + level);
-                    if (level == 3) {
-                        $('h1').html('Congratulations, you have completed the game').css({
-                            fontSize: 48,
-                            marginBottom: 15,
-                            marginTop: 15
-                        });
-                        pattern = [];
-                        spentPattern = [];
-                        removeClicks();
-                    }
+                    /*    if (level == 3) {
+                            $('h1').html('Congratulations, you have completed the game').css({
+                                fontSize: 48,
+                                marginBottom: 15,
+                                marginTop: 15
+                            });
+                            pattern = [];
+                            spentPattern = [];
+                            removeClicks();
+                            gameChecker = false;
+                            resetGame();
+                        } */
                     removeClicks();
                     //user is finished clicking through the newPattern successfully
                     // add new square to newPattern
                     addPattern();
-
-                    // playPattern();
                     setTimeout(playPattern, 800);
                 }
             }
@@ -112,8 +130,9 @@ $(document).ready(function() {
                 });
                 $('p').html('Click on "Start" to Restart');
                 // clear out both new and spent pattern arrays
-                pattern = [];
+                newPattern = [];
                 spentPattern = [];
+               // removeClicks();
             }
         }); // end .option click
     } // end create click
@@ -132,6 +151,8 @@ $(document).ready(function() {
 
     function resetGame() {
         level = 0;
+        newPattern = [];
+        spentPattern = [];
 
         $('#level').html('Level: ' + level);
         $('h1').html('The Simon Game').css({
@@ -150,5 +171,39 @@ $(document).ready(function() {
     $('.resetButton').click(function() {
         resetGame();
     });
+
+    function one() {
+        if (noise) {
+            let audio = document.getElementById("clip1");
+            audio.play();
+        }
+        noise = true;
+    }
+
+    function two() {
+        if (noise) {
+            let audio = document.getElementById("clip2");
+            audio.play();
+        }
+        noise = true;
+    }
+
+    function three() {
+        if (noise) {
+            let audio = document.getElementById("clip3");
+            audio.play();
+        }
+        noise = true;
+    }
+
+    function four() {
+        if (noise) {
+            let audio = document.getElementById("clip4");
+            audio.play();
+        }
+        noise = true;
+    }
+
+
 
 });
