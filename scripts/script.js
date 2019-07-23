@@ -18,7 +18,7 @@ $(document).ready(function() {
     var spentPattern = [];
     var level = 0;
     var gameChecker = false;
-    var noise = false;
+    var noise = true;
 
 
 
@@ -47,23 +47,11 @@ $(document).ready(function() {
 
     function flashSquare() {
         var item = newPattern.pop();
-        var itemSound = $('#clip' + item);
-        console.log(itemSound);
+        var itemSound = document.getElementById('clip' + item);
+      //  console.log(itemSound);
+        itemSound.play();
         gameChecker = true;
         noise = true;
-
-        if (itemSound == '#clip1') {
-            one();
-        }
-        if (itemSound == '#clip2') {
-            two();
-        }
-        if (itemSound == '#clip3') {
-            three();
-        }
-        if (itemSound == '#clip4') {
-            four();
-        }
 
 
 
@@ -107,7 +95,7 @@ $(document).ready(function() {
                                 marginBottom: 15,
                                 marginTop: 15
                             });
-                            pattern = [];
+                            newPattern = [];
                             spentPattern = [];
                             removeClicks();
                             gameChecker = false;
@@ -171,38 +159,6 @@ $(document).ready(function() {
     $('.resetButton').click(function() {
         resetGame();
     });
-
-    function one() {
-        if (noise) {
-            let audio = document.getElementById("clip1");
-            audio.play();
-        }
-        noise = true;
-    }
-
-    function two() {
-        if (noise) {
-            let audio = document.getElementById("clip2");
-            audio.play();
-        }
-        noise = true;
-    }
-
-    function three() {
-        if (noise) {
-            let audio = document.getElementById("clip3");
-            audio.play();
-        }
-        noise = true;
-    }
-
-    function four() {
-        if (noise) {
-            let audio = document.getElementById("clip4");
-            audio.play();
-        }
-        noise = true;
-    }
 
 
 
