@@ -178,14 +178,4 @@ $(document).ready(function() {
         }
     });
 
-    function gameComplete(finish) {
-        finish = true;
-        var isFinished = level + 3;
-
-        if (isFinished) {
-            alert("You have completed the game");
-            gameChecker = false;
-        }
-    }
-
 });
