@@ -14,7 +14,14 @@ $(document).ready(function() {
         $('#4').fadeOut(300).removeClass('colourblind4').addClass('four').fadeIn(300);
     });
     
-    
+    $(".infiniteButton").on('click', function(){
+        finish = false;
+        $(".infiniteButton").css('background-color', 'red');
+    });
+    $(".infiniteButton").off('click', function(){
+        finish = true;
+        $(".infiniteButton").css('background-color', 'grey');
+    });
 
     var newPattern = [];
     var spentPattern = [];
@@ -94,7 +101,7 @@ $(document).ready(function() {
                     setTimeout(playPattern, 800);
                 }
 
-                if (finish == true && level == 3) {
+                if (finish == true && level >= 3) {
                     $('p').html('Winner alright! Winner alright!<br>You reached the maximum level. <br>Press start to play again');
                     alert("You have finished the game!!");
                     gameChecker = false;
@@ -120,6 +127,7 @@ $(document).ready(function() {
                 playPattern();
                 newPattern = [];
                 spentPattern = [];
+                $(".infiniteButton").show();
             }
         }); // end .option click
     } // end create click
@@ -139,6 +147,9 @@ $(document).ready(function() {
         });
         $('p').html('Memorise the patterns used on the game board above and repeat by clicking the same colours. Test your skills and enjoy!');
         $('#level').html('Level: 0');
+        if(finish == true){
+            $(".infiniteButton").hide();
+        }
     }
 
     function resetGame() {
