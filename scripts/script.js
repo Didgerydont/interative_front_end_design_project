@@ -13,12 +13,14 @@ $(document).ready(function() {
         $('#3').fadeOut(300).removeClass('colourBlind3').addClass('three').fadeIn(300);
         $('#4').fadeOut(300).removeClass('colourblind4').addClass('four').fadeIn(300);
     });
+    
+    
 
     var newPattern = [];
     var spentPattern = [];
     var level = 0;
     var gameChecker = false;
-    var finish = true;  // add a function for finish = false for infinite game mode
+    var finish = true; // add a function for finish = false for infinite game mode
     var maxLevel = level + 3;
 
 
@@ -91,17 +93,16 @@ $(document).ready(function() {
                     addPattern();
                     setTimeout(playPattern, 800);
                 }
-            }
-            
-            else if(finish && level > 3){
-                alert("You have finished the game!!");
-                gameChecker = false;
-                removeClicks();
-                addPattern();
-                playPattern();
-                newPattern = [];
-                spentPattern = [];
-                
+
+                if (finish == true && level == 3) {
+                    $('p').html('Winner alright! Winner alright!<br>You reached the maximum level. <br>Press start to play again');
+                    alert("You have finished the game!!");
+                    gameChecker = false;
+                    removeClicks();
+                    resetGame();
+
+
+                }
             }
             else {
                 // else game over
@@ -136,7 +137,8 @@ $(document).ready(function() {
         $('h1').html('The Simon Game').css({
             fontSize: 40
         });
-        $('p').html('Memorise the patterns used on the game board above and repeat by clicking the same colours. Test your skills and enjoy!')
+        $('p').html('Memorise the patterns used on the game board above and repeat by clicking the same colours. Test your skills and enjoy!');
+        $('#level').html('Level: 0');
     }
 
     function resetGame() {
@@ -165,11 +167,11 @@ $(document).ready(function() {
         }
     });
 
-    function gameComplete(finish){
+    function gameComplete(finish) {
         finish = true;
         var isFinished = level + 3;
-        
-        if(isFinished){
+
+        if (isFinished) {
             alert("You have completed the game");
             gameChecker = false;
         }
