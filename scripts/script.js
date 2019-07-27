@@ -18,9 +18,8 @@ $(document).ready(function() {
     var spentPattern = [];
     var level = 0;
     var gameChecker = false;
-    var noise = true;
-
-
+    var finish = true;  // add a function for finish = false for infinite game mode
+    var maxLevel = level + 3;
 
 
     //random number generator
@@ -48,10 +47,8 @@ $(document).ready(function() {
     function flashSquare() {
         var item = newPattern.pop();
         var itemSound = document.getElementById('clip' + item);
-      //  console.log(itemSound);
         itemSound.play();
         gameChecker = true;
-        noise = true;
 
 
 
@@ -80,7 +77,6 @@ $(document).ready(function() {
             var optionId = $(this).attr('id');
 
             $(this).animate({ opacity: .2 }, 200).animate({ opacity: 1 }, 100) // animate the clicked the box
-
             // if the click matches the item remove it from spentPattern and add it to newPattern
             if (item == optionId) {
                 //adds item back to newPattern array
@@ -89,24 +85,23 @@ $(document).ready(function() {
                 if (spentPattern.length <= 0) {
                     level++;
                     $('#level').html('Level: ' + level);
-                    /*    if (level == 3) {
-                            $('h1').html('Congratulations, you have completed the game').css({
-                                fontSize: 48,
-                                marginBottom: 15,
-                                marginTop: 15
-                            });
-                            newPattern = [];
-                            spentPattern = [];
-                            removeClicks();
-                            gameChecker = false;
-                            resetGame();
-                        } */
                     removeClicks();
                     //user is finished clicking through the newPattern successfully
                     // add new square to newPattern
                     addPattern();
                     setTimeout(playPattern, 800);
                 }
+            }
+            
+            else if(finish && level > 3){
+                alert("You have finished the game!!");
+                gameChecker = false;
+                removeClicks();
+                addPattern();
+                playPattern();
+                newPattern = [];
+                spentPattern = [];
+                
             }
             else {
                 // else game over
@@ -118,9 +113,12 @@ $(document).ready(function() {
                 });
                 $('p').html('Click on "Start" to Restart');
                 // clear out both new and spent pattern arrays
+                removeClicks();
+                //resetGame();
+                addPattern();
+                playPattern();
                 newPattern = [];
                 spentPattern = [];
-               // removeClicks();
             }
         }); // end .option click
     } // end create click
@@ -135,6 +133,10 @@ $(document).ready(function() {
         resetGame();
         addPattern();
         playPattern();
+        $('h1').html('The Simon Game').css({
+            fontSize: 40
+        });
+        $('p').html('Memorise the patterns used on the game board above and repeat by clicking the same colours. Test your skills and enjoy!')
     }
 
     function resetGame() {
@@ -142,11 +144,6 @@ $(document).ready(function() {
         newPattern = [];
         spentPattern = [];
 
-        $('#level').html('Level: ' + level);
-        $('h1').html('The Simon Game').css({
-            fontSize: 40
-        });
-        $('p').html('Memorise the patterns used on the game board above and repeat by clicking the same colours. Test your skills and enjoy!<br>Click "Start" to begin your game');
     }
 
 
@@ -156,10 +153,26 @@ $(document).ready(function() {
         }
     });
 
-    $('.resetButton').click(function() {
-        resetGame();
+
+    //Sound starts as muted but can be turned on via the sound button.
+    $("audio").prop('muted', true);
+    $("#mute-audio").click(function() {
+        if ($("audio").prop('muted')) {
+            $("audio").prop('muted', false);
+        }
+        else {
+            $("audio").prop('muted', true);
+        }
     });
 
-
+    function gameComplete(finish){
+        finish = true;
+        var isFinished = level + 3;
+        
+        if(isFinished){
+            alert("You have completed the game");
+            gameChecker = false;
+        }
+    }
 
 });
