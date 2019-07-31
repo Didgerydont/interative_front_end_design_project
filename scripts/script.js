@@ -107,6 +107,7 @@ $(document).ready(function() {
                     gameChecker = false;
                     removeClicks();
                     resetGame();
+                    $(".infiniteButton").show();
 
 
                 }
@@ -149,6 +150,7 @@ $(document).ready(function() {
         $('#level').html('Level: 0');
         if(finish == true){
             $(".infiniteButton").hide();
+            $(".startButton").css('text-align','center');
         }
     }
 

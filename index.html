@@ -21,26 +21,30 @@
 </head>
 
 <body>
-    <div class="container">
+
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-5 offset-1" id="gameContainer">
-                <div class="option one" id="1"></div>
-                <div class="option two" id="2"></div>
-                <div class="option three" id="3"></div>
-                <div class="option four" id="4"></div>
+            <div class="col-md-12">
+                <h1 class="header" id="title">The Simon Game</h1>
             </div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6" id="infoBox">
-                <h1 class="header" id="title">The Simon Game</h1>
-                <p class="opening-paragraph">Memorise the patterns used on the game board above and repeat by clicking the same colours. Test your memory skills and enjoy!<br>Click "Start" to begin your game</p>
+            <div class="col-md-4 option-container" id="infoBox">
+                <h2>Play the Game</h2>
+                <p class="opening-paragraph">Memorise the patterns used on the game board above and repeat by clicking the same colours. Test your memory skills and try to get to level 20 or maybe you would like to try infinite mode if you've got what it takes!<br>Click "Start" to begin your game</p>
                 <button class="startButton">Start</button>
                 <button class="infiniteButton">Infinite Mode</button>
                 <h2 id="level">Level : 0</h2>
             </div>
-            <div class="col-md-6 cBlindBox">
+            <div class="col-md-4 offset-1" id="gameContainer">
+                <div class="option one" id="1"></div>
+                <div class="option two" id="2"></div>
+                <div class="option three" id="3"></div>
+                <div class="option four" id="4"></div>
+            </div>
+            <div class="col-md-4 option-container">
                 <h2>Colour Blind?</h2>
                 <button id="accessibilityOn">Turn on</button>
                 <!-- #332288, #44AA99, #AA3F99, #DDCC77 --- wong method -->
