@@ -5,6 +5,11 @@ $(document).ready(function() {
         $('#2').fadeOut(300).removeClass('two').addClass('colourBlind2').fadeIn(300);
         $('#3').fadeOut(300).removeClass('three').addClass('colourBlind3').fadeIn(300);
         $('#4').fadeOut(300).removeClass("four").addClass('colourBlind4').fadeIn(300);
+        // header colour change
+        $('.header-flag-green').css('color', "#332288");
+        $('.header-flag-red').css('color', "#44AA99");
+        $('.header-flag-blue').css('color', "#AA3F99");
+        $('.header-flag-yellow').css('color', "#DDCC77");
     });
 
     $("#accessibilityOff").on('click', function() {
@@ -12,6 +17,12 @@ $(document).ready(function() {
         $('#2').fadeOut(300).removeClass('colourBlind2').addClass('two').fadeIn(300);
         $('#3').fadeOut(300).removeClass('colourBlind3').addClass('three').fadeIn(300);
         $('#4').fadeOut(300).removeClass('colourblind4').addClass('four').fadeIn(300);
+        
+        //header colour change
+        $('.header-flag-green').css('color', "#1B5E20");
+        $('.header-flag-red').css('color', "#B71C1C");
+        $('.header-flag-blue').css('color', "#0D47A1");
+        $('.header-flag-yellow').css('color', "#F57F17");
     });
     
     
