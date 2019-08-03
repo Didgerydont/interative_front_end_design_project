@@ -14,6 +14,14 @@ $(document).ready(function() {
         $('#4').fadeOut(300).removeClass('colourblind4').addClass('four').fadeIn(300);
     });
     
+    
+
+    var newPattern = [];
+    var spentPattern = [];
+    var level = 0;
+    var gameChecker = false;
+    var finish = true; // finish true = max level // finish false = infinite mode
+
     $(".infiniteButton").on('click', function(){
         finish = false;
         $(".infiniteButton").css('background-color', 'red');
@@ -22,15 +30,8 @@ $(document).ready(function() {
         finish = true;
         $(".infiniteButton").css('background-color', 'grey');
     });
-
-    var newPattern = [];
-    var spentPattern = [];
-    var level = 0;
-    var gameChecker = false;
-    var finish = true; // add a function for finish = false for infinite game mode
-    var maxLevel = level + 3;
-
-
+    
+    
     //random number generator
     function randomNumber(min, max) {
         return Math.round(Math.random() * (max - min)) + min;
