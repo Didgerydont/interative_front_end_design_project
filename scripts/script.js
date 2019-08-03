@@ -1,15 +1,20 @@
 $(document).ready(function() {
 
+    // buttons colours
+
     $("#accessibilityOn").click(function() {
         $('#1').fadeOut(300).removeClass('one').addClass('colourBlind1').fadeIn(300);
         $('#2').fadeOut(300).removeClass('two').addClass('colourBlind2').fadeIn(300);
         $('#3').fadeOut(300).removeClass('three').addClass('colourBlind3').fadeIn(300);
         $('#4').fadeOut(300).removeClass("four").addClass('colourBlind4').fadeIn(300);
+        
         // header colour change
         $('.header-flag-green').css('color', "#332288");
         $('.header-flag-red').css('color', "#44AA99");
         $('.header-flag-blue').css('color', "#AA3F99");
         $('.header-flag-yellow').css('color', "#DDCC77");
+        // all buttons change;
+        $('button').css('background-color', '#332288');
     });
 
     $("#accessibilityOff").on('click', function() {
@@ -23,6 +28,8 @@ $(document).ready(function() {
         $('.header-flag-red').css('color', "#B71C1C");
         $('.header-flag-blue').css('color', "#0D47A1");
         $('.header-flag-yellow').css('color', "#F57F17");
+        // all buttons change back
+        $('button').css('background-color', '#1B5E20');
     });
     
     
@@ -35,9 +42,9 @@ $(document).ready(function() {
 
     $(".infiniteButton").on('click', function(){
         finish = false;
-        $(".infiniteButton").css('background-color', 'red');
+        $(".infiniteButton").css('background-color', '#B71C1C');
     });
-    $(".infiniteButton").off('click', function(){
+    $(".infiniteButton").off('click', function(e){
         finish = true;
         $(".infiniteButton").css('background-color', 'grey');
     });
@@ -114,7 +121,7 @@ $(document).ready(function() {
                 }
 
                 if (finish == true && level >= 3) {
-                    $('p').html('Winner alright! Winner alright!<br>You reached the maximum level. <br>Press start to play again');
+                    $('p').html('Winner alright! Winner alright!<br>You reached the maximum level. <br>Press start to play again or try infinite mode if you think you have got what it takes');
                     alert("You have finished the game!!");
                     gameChecker = false;
                     removeClicks();
@@ -130,8 +137,8 @@ $(document).ready(function() {
                 $('h1').html('Game Over').css({
                     fontSize: 60,
                     marginBottom: 15,
-                    marginTop: 15
-                });
+                    marginTop: 15,
+                }).css('color', '#B71C1C');
                 $('p').html('Click on "Start" to Restart');
                 // clear out both new and spent pattern arrays
                 removeClicks();
@@ -186,6 +193,7 @@ $(document).ready(function() {
     $("#mute-audio").click(function() {
         if ($("audio").prop('muted')) {
             $("audio").prop('muted', false);
+            $('#mute-audio').css('background-color', '#B71C1C');
         }
         else {
             $("audio").prop('muted', true);
