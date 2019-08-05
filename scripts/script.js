@@ -13,7 +13,7 @@ $(document).ready(function() {
         $('.header-flag-red').css('color', "#44AA99");
         $('.header-flag-blue').css('color', "#AA3F99");
         $('.header-flag-yellow').css('color', "#DDCC77");
-        // all buttons change;
+        // all buttons change
         $('button').css('background-color', '#332288');
     });
 
@@ -162,9 +162,6 @@ $(document).ready(function() {
         resetGame();
         addPattern();
         playPattern();
-        $('h1').html('The Simon Game').css({
-            fontSize: 40
-        });
         $('p').html('Memorise the patterns used on the game board above and repeat by clicking the same colours. Test your skills and enjoy!');
         $('#level').html('Level: 0');
         if(finish == true){
