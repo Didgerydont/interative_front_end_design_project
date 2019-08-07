@@ -162,6 +162,9 @@ $(document).ready(function() {
         resetGame();
         addPattern();
         playPattern();
+        $('h1').html('<h1 class="header" id="title">'
+                        +'<span class="header-flag-green">The</span><span class="header-flag-red"> Sim</span><span class="header-flag-blue">on G</span><span class="header-flag-yellow">ame</span>'
+                    +'</h1>');
         $('p').html('Memorise the patterns used on the game board above and repeat by clicking the same colours. Test your skills and enjoy!');
         $('#level').html('Level: 0');
         if(finish == true){
@@ -194,6 +197,7 @@ $(document).ready(function() {
         }
         else {
             $("audio").prop('muted', true);
+            $('#mute-audio').css('background-color', '#1B5E20');
         }
     });
 

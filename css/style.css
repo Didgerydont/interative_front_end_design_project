@@ -125,7 +125,7 @@ button:active {
  border-radius: 16px;
  margin-top: 16px;
  padding: 20px 20px 20px 20px;
- box-shadow: 5px 10px rgba(192,192,192,0.3);
+ box-shadow: 5px 5px rgba(192,192,192,0.3);
 }
 
 
@@ -142,6 +142,12 @@ button:active {
  cursor: pointer;
 }
 
+.level-container{
+ text-align: center; 
+}
+#level {
+ display: inline-block;
+}
 /* Colours */
 
 .one {
