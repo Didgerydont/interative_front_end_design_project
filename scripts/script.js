@@ -2,7 +2,9 @@ $(document).ready(function() {
 
     // buttons colours
 
-    $("#accessibilityOn").click(function() {
+    $("#accessibilityOn").click(colourBlindOn);
+
+    function colourBlindOn() {
         $('#1').fadeOut(300).removeClass('one').addClass('colourBlind1').fadeIn(300);
         $('#2').fadeOut(300).removeClass('two').addClass('colourBlind2').fadeIn(300);
         $('#3').fadeOut(300).removeClass('three').addClass('colourBlind3').fadeIn(300);
@@ -15,9 +17,11 @@ $(document).ready(function() {
         $('.header-flag-yellow').css('color', "#DDCC77");
         // all buttons change
         $('button').css('background-color', '#332288');
-    });
+    };
 
-    $("#accessibilityOff").on('click', function() {
+    $("#accessibilityOff").click(colourBlindOff);
+    
+    function colourBlindOff() {
         $('#1').fadeOut(300).removeClass('colourBlind1').addClass('one').fadeIn(300);
         $('#2').fadeOut(300).removeClass('colourBlind2').addClass('two').fadeIn(300);
         $('#3').fadeOut(300).removeClass('colourBlind3').addClass('three').fadeIn(300);
@@ -30,7 +34,7 @@ $(document).ready(function() {
         $('.header-flag-yellow').css('color', "#F57F17");
         // all buttons change back
         $('button').css('background-color', '#1B5E20');
-    });
+    };
     
     
 
@@ -66,7 +70,7 @@ $(document).ready(function() {
     function playPattern() {
         // takes newPattern array
         for (var i = 0; i < newPattern.length; i++) {
-            var delayTime = i * 800;
+            var delayTime = i * 1000;
 
             setTimeout(flashSquare, delayTime);
         }
