@@ -193,6 +193,33 @@ function flashSquare() {
 
 ## Testing
 ---
+
+I have tested the project by making sure that it runs on various browsers. 
+
+  * Chrome --> The project was developed on Chrome and works as expected
+  * Microsoft Edge --> Works as expected. 
+  * Opera --> Works as expected.
+  * FireFox --> Works as expected. 
+  * Internet Explorer -> Works as expected. 
+
+The page is also responsive due to the use of bootstrap and the mobile first design approach. 
+The page holds its shape and shows no structural errors or overlapping on any of the devices that I have test on. 
+
+
+The devices used for testing were... 
+  * Samsung S7 --> Works as expected
+  * Samsung S5 --> Works as expected
+  * Pixel 2 --> Works as expected
+  * Pixel 2 XL --> Works as expected
+  * Iphone 5/SE --> Works as expected
+  * Iphone 6/7/8 --> Works as expected
+  * Iphone 6/7/8 Plus --> Works as expected
+  * Iphone X --> Works as expected
+  * IPad --> Works as expected
+  * IPad Pro --> Works as expected
+
+
+
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
 Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
