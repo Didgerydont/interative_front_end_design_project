@@ -218,13 +218,30 @@ The devices used for testing were...
   * IPad --> Works as expected
   * IPad Pro --> Works as expected
 
+During the testing process for this project I have also automated my random number generator using the jasmine testing framework. 
+I had intended on doing extensive automated testing on the project but as most of the DOM manipulation is written in Jquery, this proved to be diffcult. 
+I tried to instal jasmine-jquery by velesin but unfortunately had no luck in getting this operational and had to the ditch this attempt due to time constraints. 
+I do hope to come back to this project in future and get this system up and running as it does seem to be a super effective tool for testing when it can actually be made to run!
 
+My jasmine test for now is 
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+```
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+describe("randomNumber to generate a random number 1 to 4", function(){
+    
+    
+    let min =  1;
+    let max = 4;
+    
+    it("should generate a random number 1 to 4", function(){
+        let ranNum = Math.round(Math.random() * (max - min)) + min;
+        
+        expect(ranNum).toBeGreaterThan(0);
+        expect(ranNum).toBeLessThan(5);
+    });
+});
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+```
 
 ## Contact form:
 ---
@@ -242,14 +259,15 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 ---
-(GITHUB PAGES) This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+In order to deploy the project I had to take a few steps.
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-
-Different values for environment variables (Heroku Config Vars)?
-Different configuration files?
-Separate git branch?
-In addition, if it is not obvious, you should also describe how to run your code locally.
+1. Uploaded the file to my Github account
+2. Go into my profile and find the project itself
+3. Go into settings within the project file
+4. Go down along the settings as far as GitHub pages
+5. Choose "Master Branch" as the source for the file
+6. Click deploy.
+7. The project is deployed on https://didgerydont.github.io/interative_front_end_design_project/.
 
 ## Credits
 ---
