@@ -43,11 +43,14 @@ $(document).ready(function() {
     var level = 0;
     var gameChecker = false;
     var finish = true; // finish true = max level // finish false = infinite mode
-
+    
+    //infinite mode on
     $(".infiniteButton").on('click', function(){
         finish = false;
         $(".infiniteButton").css('background-color', '#B71C1C');
     });
+    
+    //infinite mode off
     $(".infiniteButton").off('click', function(e){
         finish = true;
         $(".infiniteButton").css('background-color', 'grey');
