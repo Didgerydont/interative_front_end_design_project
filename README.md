@@ -24,10 +24,10 @@ some lights or sounds to to the game. "
 ## Wireframes
 ---
 
-![wireframe](wireframes/wireframe_snip1.PNG "Wireframe1")
+![wireframe]("wireframes/wireframe_snip1.png" "Wireframe1")
 
 
-![wireframe](wireframes//wireframe_snip2.PNG "Wireftrame2")
+![wireframe](/wireframes/wireframe_snip1.png "Wireframe2")
 
 
 ## Features
