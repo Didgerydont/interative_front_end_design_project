@@ -271,6 +271,7 @@ I would personally like to give credit to the following people and webpages for 
   * www.kellyking.me
   * Coding tech over on Youtube
   * The good people over at stack overflow. 
+  * www.designskilz.com For the cool button effects.
 
 
 ## Content
