@@ -24,10 +24,10 @@ some lights or sounds to to the game. "
 ## Wireframes
 ---
 
-![wireframe]("wireframes/wireframe_snip1.png" "Wireframe1")
+![wireframe](https://github.com/Didgerydont/interative_front_end_design_project/blob/master/wireframes/wireframe_snip1.png?raw=true "Wireframe1")     
 
 
-![wireframe](/wireframes/wireframe_snip1.png "Wireframe2")
+![wireframe](https://github.com/Didgerydont/interative_front_end_design_project/blob/master/wireframes/wireframe_snip2.png?raw=true "Wireframe2")
 
 
 ## Features
@@ -62,7 +62,7 @@ The game will consist of multiple buttons, there will a start button, a reset bu
 and off the sound options on the colours.
 
 
-### What makes it tick
+## What makes it tick
 ---
 
 This project is made using a 3 different technologies and frameworks.
