@@ -1,7 +1,7 @@
 # The "Simon" Memory game
 ---
 This project is based on the memory game "Simon" invented by Ralph H. Baer and Howard J. Morrison, working for toy design firm Marvin Glass and Associates,
-with software programming by Lenny Cope. The device creates a series of tones and lights and requires a user to repeat the sequence
+with software programming by Lenny Cope. The device creates a series of tones and lights and requires a user to repeat a sequence
 
 
 
@@ -21,10 +21,10 @@ some lights or sounds to to the game. "
 "Being a keen gamer and so competitively minded, I would like the game to tell me how Im doing on my current level and what the highest level that I have achieved in this current session is"
 
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
+## Wireframes
+---
 
-As a user type, I want to perform an action, so that I can achieve a goal.
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+
 
 ## Features
 ---
@@ -272,14 +272,9 @@ I would personally like to give credit to the following people and webpages for 
 ## Content
 ---
 
+Although the work done on this project is my own, it must be stated that "The Simon Game" and its branding belongs 
+in its entirety to "Hasbro" and "The Milton Bradley Company". The intent of this project is educational and for the purposes of completeting
+the "Full Stack Web Develeoper" course provided by The Code Institute.
 
-
-## Media
----
-
-
-
-The photos used in this site were obtained from ...
-## Acknowledgements
 ---
 
